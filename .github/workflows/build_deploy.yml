@@ -27,7 +27,7 @@ jobs:
       - name: Log in to container registry
         uses: docker/login-action@v1
         with:
-          registry: acrazconapps.azurecr.io
+          registry: acahelloacr001.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
