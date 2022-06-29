@@ -55,4 +55,5 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-             az containerapp up -n aca-hello -g aca-rg --image acahelloacr001.azurecr.io/aca-hello/aca-hello:${{ github.sha }}  --registry-username ${{ secrets.ACR_USERNAME }} --registry-password --password ${{ secrets.ACR_PASSWORD }}
+            az config set extension.use_dynamic_install=yes_without_prompt
+            az containerapp up -n aca-hello -g aca-rg --image acahelloacr001.azurecr.io/aca-hello/aca-hello:${{ github.sha }}  --registry-username ${{ secrets.ACR_USERNAME }} --registry-password --password ${{ secrets.ACR_PASSWORD }}
